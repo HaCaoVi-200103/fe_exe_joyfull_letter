@@ -1,0 +1,53 @@
+.containerHeader {
+    box-shadow: 0 0 1px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    .boxLogo {
+        width: 33%;
+        align-items: center;
+
+        div {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .boxNavigate {
+        align-items: center;
+        width: 33%;
+
+        div {
+            display: flex;
+            justify-content: center;
+        }
+
+        .routeName {
+            text-decoration: none;
+            font-size: 130%;
+            color: #242424;
+
+        }
+    }
+
+    .boxIcon {
+        align-items: center;
+        width: 33%;
+
+        .itemIcon1 {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .itemIcon2 {
+            display: flex;
+            justify-content: flex-start;
+        }
+    }
+
+    .icon {
+        font-size: 30px;
+        color: #242424;
+    }
+}
