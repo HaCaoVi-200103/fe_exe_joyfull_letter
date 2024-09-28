@@ -3,7 +3,9 @@ import Layout from "../../components/Layout";
 import Poster from "../../assets/poster.png";
 import ButtonCustomize from "../../components/Button";
 import style from "./style.module.css";
+import { useNavigate } from "react-router-dom";
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <Layout>
       <Container fluid>
@@ -11,7 +13,10 @@ const Home = () => {
           <Col className="p-0">
             <Image src={Poster} fluid />
           </Col>
-          <Col className={`${style.boxButton}`}>
+          <Col
+            onClick={() => navigate("/store")}
+            className={`${style.boxButton}`}
+          >
             <ButtonCustomize size="lg" title="Go To Store" />
           </Col>
         </Row>

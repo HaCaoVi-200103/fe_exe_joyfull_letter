@@ -1,14 +1,11 @@
 import { Col, Container, Row } from "react-bootstrap";
 import Layout from "../../components/Layout";
-
 const About = () => {
   return (
     <Layout>
-      <Container>
+      <Container fluid>
         <Row>
-          <Col>
-            <h1>Hello</h1>
-          </Col>
+          <Col></Col>
         </Row>
       </Container>
     </Layout>
