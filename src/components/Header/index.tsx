@@ -5,7 +5,36 @@ import { BsSearchHeart } from "react-icons/bs";
 import { TbShoppingBagHeart } from "react-icons/tb";
 import style from "./style.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useEffect, useRef } from "react";
+const navigateRoute = [
+  {
+    name: "Home",
+    route: "/",
+  },
+  {
+    name: "Store",
+    route: "/store",
+  },
+  {
+    name: "About",
+    route: "/about",
+  },
+  {
+    name: "Contact",
+    route: "/contact",
+  },
+];
+
 const Header = () => {
+  const navRefs = useRef<(HTMLAnchorElement | null)[]>([]);
+
+  useEffect(() => {
+    navRefs.current.forEach((ref) => {
+      if (ref?.classList[1] === "active") {
+        ref.classList.add(`${style.active}`);
+      }
+    });
+  }, [navRefs]);
   return (
     <Container fluid className={`${style.containerHeader} `}>
       <Row className={`${style.boxLogo}`}>
@@ -14,26 +43,20 @@ const Header = () => {
         </Col>
       </Row>
       <Row className={`${style.boxNavigate}`}>
-        <Col>
-          <NavLink className={style.routeName} to={"/"}>
-            Home
-          </NavLink>
-        </Col>
-        <Col>
-          <NavLink className={style.routeName} to={"/store"}>
-            Store
-          </NavLink>
-        </Col>
-        <Col>
-          <NavLink className={style.routeName} to={"/about"}>
-            About
-          </NavLink>
-        </Col>
-        <Col>
-          <NavLink className={style.routeName} to={"/contact"}>
-            Contact
-          </NavLink>
-        </Col>
+        {navigateRoute &&
+          navigateRoute.map((item, index) => (
+            <Col key={index}>
+              <NavLink
+                ref={(el) => {
+                  navRefs.current[index] = el;
+                }}
+                className={style.routeName}
+                to={item.route}
+              >
+                {item.name}
+              </NavLink>
+            </Col>
+          ))}
       </Row>
       <Row className={`${style.boxIcon}`}>
         <Col className={style.itemIcon1}>

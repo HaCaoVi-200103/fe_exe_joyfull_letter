@@ -6,17 +6,18 @@ import { AiFillInstagram } from "react-icons/ai";
 import { FaYoutube } from "react-icons/fa6";
 import { FaTwitterSquare } from "react-icons/fa";
 import { CgCopyright } from "react-icons/cg";
+import { FaArrowRightLong } from "react-icons/fa6";
 const Footer = () => {
   return (
     <Container fluid className={`${style.containerFooter}`}>
       <Row className={`${style.introductFooter}`}>
-        <Row>
+        <Col md={4} className={`${style.intro}`}>
           <Row>
             <Col>
               <h5>JOYFULL LETTER</h5>
             </Col>
           </Row>
-          <Row>
+          <Row className={`${style.boxParaghap}`}>
             <Col>
               <p>
                 The letter-writing shop specializes in creating and sending
@@ -27,38 +28,48 @@ const Footer = () => {
           </Row>
           <Row>
             <Col>
-              <NavLink to={"/about"}>read more</NavLink>
+              <NavLink className={style.readMore} to={"/about"}>
+                read more <FaArrowRightLong />
+              </NavLink>
             </Col>
           </Row>
-        </Row>
+        </Col>
 
-        <Row>
+        <Col md={8} className={`${style.social}`}>
           <Row>
-            <h5>Social</h5>
-          </Row>
-          <Row>
-            <Col>
-              <FaFacebook />
-              <AiFillInstagram />
-              <FaYoutube />
-              <FaTwitterSquare />
+            <Col className="d-flex gap-3">
+              <h5>My Team:</h5>
+              <span>Cao Vi</span>
+              <span>Quoc Hao</span>
+              <span>Huynh Huong</span>
+              <span>My Dieu</span>
+              <span>Uyen Quan</span>
             </Col>
           </Row>
-        </Row>
-      </Row>
-      <Row>
-        <Col>
-          <h5>My Team:</h5>
+          <Row className="mt-1">
+            <Col className="d-flex gap-4">
+              <h5>Address:</h5>
+              <p>
+                600 Nguyễn Văn Cừ Nối Dài, An Bình, Ninh Kiều, Cần Thơ 900000,
+                Vietnam
+              </p>
+            </Col>
+          </Row>
+          <Row className="mt-1">
+            <h5>Social:</h5>
+          </Row>
+          <Row>
+            <Col className="d-flex gap-4">
+              <FaFacebook className={style.iconSocial} />
+              <AiFillInstagram className={style.iconSocial} />
+              <FaYoutube className={style.iconSocial} />
+              <FaTwitterSquare className={style.iconSocial} />
+            </Col>
+          </Row>
         </Col>
-        <Col>
-          <h5>Cao Vi</h5>
-          <h5>Quoc Hao</h5>
-          <h5>Huynh Huong</h5>
-          <h5>My Dieu</h5>
-          <h5>Uyen Quan</h5>
-        </Col>
       </Row>
-      <Row>
+
+      <Row className="mt-4">
         <Col>
           <p>
             Copyright <CgCopyright />

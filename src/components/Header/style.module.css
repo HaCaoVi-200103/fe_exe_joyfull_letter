@@ -18,6 +18,9 @@
         align-items: center;
         width: 33%;
 
+
+
+
         div {
             display: flex;
             justify-content: center;
@@ -27,7 +30,16 @@
             text-decoration: none;
             font-size: 130%;
             color: #242424;
+        }
 
+        .routeName:hover {
+            transition: 0.3s all;
+            color: #cfab68;
+
+        }
+
+        .active {
+            color: #cfab68;
         }
     }
 
@@ -49,5 +61,11 @@
     .icon {
         font-size: 30px;
         color: #242424;
+    }
+
+
+    .icon:hover {
+        transition: 0.3s all;
+        color: #cfab68;
     }
 }
