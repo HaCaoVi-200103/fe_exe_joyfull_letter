@@ -1,20 +1,18 @@
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
-
-function CardCustomize() {
-  return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card>
-  );
+import { Image } from "react-bootstrap";
+import style from "./style.module.css";
+interface Props {
+  image: string;
+  title: string;
+  price: string;
 }
+const CardCustomize: React.FC<Props> = ({ image, title, price }) => {
+  return (
+    <div className={style.boxCard}>
+      <Image src={image} fluid className={style.imageCard} />
+      <h5 className={style.titleCard}>{title}</h5>
+      <strong className={style.priceCard}>{price}</strong>
+    </div>
+  );
+};
 
 export default CardCustomize;

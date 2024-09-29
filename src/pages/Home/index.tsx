@@ -4,6 +4,8 @@ import Poster from "../../assets/poster.png";
 import ButtonCustomize from "../../components/Button";
 import style from "./style.module.css";
 import { useNavigate } from "react-router-dom";
+import BoxProductHome from "../../components/BoxProductHome";
+import { data } from "../../data";
 const Home = () => {
   const navigate = useNavigate();
   return (
@@ -19,6 +21,9 @@ const Home = () => {
           >
             <ButtonCustomize size="lg" title="Go To Store" />
           </Col>
+        </Row>
+        <Row>
+          <BoxProductHome title="New Product" data={data} />
         </Row>
       </Container>
     </Layout>
