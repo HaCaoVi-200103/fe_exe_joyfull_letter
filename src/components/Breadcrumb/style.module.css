@@ -1,0 +1,20 @@
+.link {
+    text-decoration: none;
+    color: #cfab68;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.currentLink {
+    text-decoration: none;
+    color: #777777;
+    font-size: 20px;
+    font-weight: 600;
+
+}
+
+.iconBreadCrumb {
+    font-size: 20px;
+    color: #777777;
+    font-weight: 600;
+}

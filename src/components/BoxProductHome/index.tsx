@@ -16,7 +16,7 @@ const BoxProductHome: React.FC<Props> = ({ data, title }) => {
       <Row className="d-flex gap-3 justify-content-center me-5 ms-5">
         {data &&
           data.map((item, index) => (
-            <Col md={3}>
+            <Col key={index} md={3}>
               <CardCustomize
                 image={item.image}
                 price={item.price}
