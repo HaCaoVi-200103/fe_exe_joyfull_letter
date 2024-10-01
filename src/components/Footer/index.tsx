@@ -37,7 +37,7 @@ const Footer = () => {
 
         <Col md={8} className={`${style.social}`}>
           <Row>
-            <Col className="d-flex gap-3">
+            <Col className="d-flex gap-2">
               <h5>My Team:</h5>
               <span>Cao Vi</span>
               <span>Quoc Hao</span>
@@ -56,10 +56,14 @@ const Footer = () => {
             </Col>
           </Row>
           <Row className="mt-1">
-            <h5>Social:</h5>
-          </Row>
-          <Row>
             <Col className="d-flex gap-4">
+              <h5>Phone:</h5>
+              <p>0123456789</p>
+            </Col>
+          </Row>
+          <Row className="mt-1">
+            <Col className="d-flex gap-4 align-items-center">
+              <h5>Social:</h5>
               <FaFacebook className={style.iconSocial} />
               <AiFillInstagram className={style.iconSocial} />
               <FaYoutube className={style.iconSocial} />

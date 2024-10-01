@@ -6,6 +6,9 @@ import { TbShoppingBagHeart } from "react-icons/tb";
 import style from "./style.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useRef } from "react";
+import { FaBars } from "react-icons/fa";
+import { useAppDispatch, useAppSelector } from "../../hooks";
+import { handleMenuBar } from "../../redux/features/Menubar";
 const navigateRoute = [
   {
     name: "Home",
@@ -27,6 +30,8 @@ const navigateRoute = [
 
 const Header = () => {
   const navRefs = useRef<(HTMLAnchorElement | null)[]>([]);
+  const dispatch = useAppDispatch();
+  const statusBar = useAppSelector((state) => state.menuStatus.value);
 
   useEffect(() => {
     navRefs.current.forEach((ref) => {
@@ -35,17 +40,33 @@ const Header = () => {
       }
     });
   }, [navRefs]);
+
+  const handleClick = () => {
+    dispatch(handleMenuBar());
+  };
   return (
     <Container fluid className={`${style.containerHeader} `}>
+      <Row onClick={() => handleClick()} className={style.iconBarHeader}>
+        <Col>
+          <FaBars />
+        </Col>
+      </Row>
       <Row className={`${style.boxLogo}`}>
         <Col>
           <Image src={Logo} fluid width={"100px"} />
         </Col>
       </Row>
-      <Row className={`${style.boxNavigate}`}>
+      <Row
+        className={`${style.boxNavigate} ${statusBar ? style.showMenubar : ""}`}
+      >
         {navigateRoute &&
           navigateRoute.map((item, index) => (
-            <Col key={index}>
+            <Col
+              onClick={() => handleClick()}
+              className={style.navigate}
+              md={statusBar ? 1 : undefined}
+              key={index}
+            >
               <NavLink
                 ref={(el) => {
                   navRefs.current[index] = el;

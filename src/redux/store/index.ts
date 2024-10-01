@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
-import counterSlice from '../features'
+import menuBarSlice from '../features/Menubar'
 // ...
 
 export const store = configureStore({
     reducer: {
-        counter: counterSlice
+        menuStatus: menuBarSlice
     },
 })
 
