@@ -42,7 +42,7 @@ const Header = () => {
   }, [navRefs]);
 
   const handleClick = () => {
-    dispatch(handleMenuBar());
+    dispatch(handleMenuBar(!statusBar));
   };
   return (
     <Container fluid className={`${style.containerHeader} `}>

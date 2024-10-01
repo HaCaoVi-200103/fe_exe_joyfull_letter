@@ -18,10 +18,10 @@ const Contact = () => {
     <Layout>
       <Container fluid className="mt-4 mb-4">
         <Row>
-          <Col>
+          <Col md={6}>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.0533542569992!2d105.72985667404039!3d10.012451790093596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0882139720a77%3A0x3916a227d0b95a64!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBGUFQgQ-G6p24gVGjGoQ!5e0!3m2!1sen!2s!4v1727636533418!5m2!1sen!2s"
-              width="700"
+              width="100%"
               height="450"
               style={{ border: "0", borderRadius: "8px" }}
               allowFullScreen={true}
@@ -29,7 +29,7 @@ const Contact = () => {
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </Col>
-          <Col>
+          <Col md={6}>
             <Form
               noValidate
               validated={validated}

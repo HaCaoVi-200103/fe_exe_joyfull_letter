@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 // Define a type for the slice state
 interface MenuBarState {
@@ -15,8 +15,8 @@ export const menuBarSlice = createSlice({
     // `createSlice` will infer the state type from the `initialState` argument
     initialState,
     reducers: {
-        handleMenuBar: (state) => {
-            state.value = !state.value
+        handleMenuBar: (state, actions: PayloadAction<boolean>) => {
+            state.value = actions.payload
         },
 
     },

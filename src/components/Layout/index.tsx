@@ -14,7 +14,10 @@ const Layout: React.FC<Props> = ({ children }) => {
       <Row className={style.header}>
         <Header />
       </Row>
-      <Row onClick={() => dispatch(handleMenuBar())} className={style.main}>
+      <Row
+        onClick={() => dispatch(handleMenuBar(false))}
+        className={style.main}
+      >
         {children}
       </Row>
       <Row className={style.footer}>
