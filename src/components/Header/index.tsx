@@ -64,7 +64,7 @@ const Header = () => {
             <Col
               onClick={() => handleClick()}
               className={style.navigate}
-              md={statusBar ? 1 : undefined}
+              md={statusBar ? 3 : undefined}
               key={index}
             >
               <NavLink
