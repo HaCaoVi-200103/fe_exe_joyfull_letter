@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
 import { lazy, Suspense } from "react";
 import AtomicSpinner from "atomic-spinner";
 import "bootstrap/dist/css/bootstrap.min.css";
