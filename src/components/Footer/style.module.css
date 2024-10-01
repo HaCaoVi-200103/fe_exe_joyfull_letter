@@ -26,3 +26,10 @@
         }
     }
 }
+
+@media screen and (max-width:500px) {
+
+    .containerFooter {
+        padding: 10px;
+    }
+}

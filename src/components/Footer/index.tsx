@@ -26,7 +26,7 @@ const Footer = () => {
               </p>
             </Col>
           </Row>
-          <Row>
+          <Row className="mb-4">
             <Col>
               <NavLink className={style.readMore} to={"/about"}>
                 read more <FaArrowRightLong />
@@ -47,7 +47,7 @@ const Footer = () => {
             </Col>
           </Row>
           <Row className="mt-1">
-            <Col className="d-flex gap-4">
+            <Col className="d-flex  gap-2">
               <h5>Address:</h5>
               <p>
                 600 Nguyễn Văn Cừ Nối Dài, An Bình, Ninh Kiều, Cần Thơ 900000,
@@ -56,13 +56,13 @@ const Footer = () => {
             </Col>
           </Row>
           <Row className="mt-1">
-            <Col className="d-flex gap-4">
+            <Col className="d-flex gap-2">
               <h5>Phone:</h5>
               <p>0123456789</p>
             </Col>
           </Row>
           <Row className="mt-1">
-            <Col className="d-flex gap-4 align-items-center">
+            <Col className="d-flex gap-2 align-items-center">
               <h5>Social:</h5>
               <FaFacebook className={style.iconSocial} />
               <AiFillInstagram className={style.iconSocial} />
