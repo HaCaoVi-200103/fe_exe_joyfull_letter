@@ -1,0 +1,27 @@
+.boxContainerBoxCart {
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 10px;
+    margin: 10px 20px;
+
+    .imageBoxCart {
+        border-radius: 3px;
+    }
+
+    .boxQuantity {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        .buttonBoxCard {
+            width: fit-content;
+            background-color: #ecf0f1;
+            border: none;
+            color: rgb(40, 40, 40);
+            font-size: 20px;
+            border-radius: 3px;
+        }
+
+    }
+
+}
