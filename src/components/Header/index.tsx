@@ -16,7 +16,7 @@ const navigateRoute = [
   },
   {
     name: "Store",
-    route: "/store",
+    route: "/product",
   },
   {
     name: "About",
