@@ -8,6 +8,7 @@ const Store = lazy(() => import("./pages/Store"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Cart = lazy(() => import("./pages/Cart"));
+const ProductDetail = lazy(() => import("./pages/ProductDetail"));
 
 const App = () => {
   return (
@@ -15,7 +16,8 @@ const App = () => {
       <Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/store" element={<Store />} />
+          <Route path="/product" element={<Store />} />
+          <Route path="/product/:proId" element={<ProductDetail />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
