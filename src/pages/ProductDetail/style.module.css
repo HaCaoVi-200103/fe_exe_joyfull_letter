@@ -1,0 +1,146 @@
+.product-details {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.breadcrumbs {
+  margin-bottom: 10px;
+  color: #555;
+  font-size: 14px;
+}
+
+.product-content {
+  display: flex;
+  gap: 20px;
+}
+
+.product-right {
+  margin-bottom: 30px;
+}
+
+.product-images {
+  display: flex;
+}
+
+.thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.thumbnail {
+  width: 50px;
+  height: 50px;
+}
+
+.main-image {
+  margin-left: 20px;
+}
+
+.main-card-image {
+  width: 250px;
+  height: auto;
+}
+
+.product-info {
+  max-width: 400px;
+}
+
+.product-info h1 {
+  font-size: 32px;
+  color: #a77d24;
+}
+
+.subtitle {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.product-options p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.seeds,
+.sizes {
+  display: flex;
+  flex-direction: column;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.quantity-control button {
+  width: 30px;
+  height: 30px;
+}
+
+.quantity-control input {
+  width: 40px;
+  text-align: center;
+}
+
+.price {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.add-to-cart,
+.buy-now {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.add-to-cart {
+  background-color: #f1f1f1;
+  color: #000;
+}
+
+.buy-now {
+  background-color: #a77d24;
+  color: #fff;
+}
+
+.img {
+  height: 400px;
+}
+
+.productRight {
+  margin-left: 150px;
+}
+
+.quantity_control button {
+  width: 40px;
+  height: 40px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  font-size: 18px;
+  color: #333;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.quantity_control button:hover {
+  background-color: #e2e2e2;
+}
+
+.quantity_control input {
+  width: 40px;
+  text-align: center;
+  font-size: 18px;
+  border: none;
+}
