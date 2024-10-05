@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Layout from "../../components/Layout";
 import style from "./style.module.css";
 import BreadcrumbCustomize from "../../components/Breadcrumb";
 import img_birthdat from "../../assets/img_birthdat.jpg";
+
 
 const ProductDetail = () => {
   const [selectedSeed, setSelectedSeed] = useState<string[]>([]);
