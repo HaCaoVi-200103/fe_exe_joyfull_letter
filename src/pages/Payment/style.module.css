@@ -28,7 +28,7 @@
     }
 }
 
-@media screen and (max-width:1000px) {
+@media screen and (max-width:760px) {
     .boxContent {
         display: flex;
         flex-direction: column-reverse;
