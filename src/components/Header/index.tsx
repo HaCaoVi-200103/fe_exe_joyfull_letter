@@ -1,6 +1,6 @@
 import { Col, Container, Image, Row } from "react-bootstrap";
 import Logo from "../../assets/logo.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { BsSearchHeart } from "react-icons/bs";
 import { TbShoppingBagHeart } from "react-icons/tb";
 import style from "./style.module.css";
@@ -32,7 +32,7 @@ const Header = () => {
   const navRefs = useRef<(HTMLAnchorElement | null)[]>([]);
   const dispatch = useAppDispatch();
   const statusBar = useAppSelector((state) => state.menuStatus.value);
-
+  const navigate = useNavigate();
   useEffect(() => {
     navRefs.current.forEach((ref) => {
       if (ref?.classList[1] === "active") {
@@ -84,7 +84,10 @@ const Header = () => {
           <BsSearchHeart className={style.icon} />
         </Col>
         <Col className={style.itemIcon2}>
-          <TbShoppingBagHeart className={style.icon} />
+          <TbShoppingBagHeart
+            onClick={() => navigate("/cart")}
+            className={style.icon}
+          />
         </Col>
       </Row>
     </Container>
