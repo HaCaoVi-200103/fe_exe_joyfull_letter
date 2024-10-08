@@ -4,8 +4,7 @@ import style from "./style.module.css";
 import BreadcrumbCustomize from "../../components/Breadcrumb";
 import img_dep from "../../assets/img_dep.jpg";
 import img_bd from "../../assets/img_bd.jpg";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 const ProductDetail = () => {
   const [selectedSeed, setSelectedSeed] = useState<string[]>([]);
