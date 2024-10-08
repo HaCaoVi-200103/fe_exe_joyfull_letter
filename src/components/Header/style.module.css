@@ -32,7 +32,6 @@
         .routeName:hover {
             transition: 0.3s all;
             color: #cfab68;
-
         }
 
         .active {

@@ -18,7 +18,6 @@ export const menuBarSlice = createSlice({
         handleMenuBar: (state, actions: PayloadAction<boolean>) => {
             state.value = actions.payload
         },
-
     },
 })
 

@@ -12,7 +12,6 @@ const DropdownCustomize: React.FC<Props> = ({ menuItem, toggole }) => {
       <Dropdown.Toggle variant="secondary" id="dropdown-basic">
         {active}
       </Dropdown.Toggle>
-
       <Dropdown.Menu>
         {menuItem &&
           menuItem.length > 0 &&

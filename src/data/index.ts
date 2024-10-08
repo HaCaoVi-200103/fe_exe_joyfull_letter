@@ -10,13 +10,6 @@ export const data: Product[] = [
         price: "$3.99",
         image: empty
     },
-    // {
-    //     id: 2,
-    //     name: "Thank You Card",
-    //     description: "A simple yet elegant card to express gratitude and appreciation.",
-    //     price: "$2.99",
-    //     image: "public/images/im2.jpg"
-    // },
     {
         id: 3,
         name: "Anniversary Card",
