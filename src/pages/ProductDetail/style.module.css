@@ -1,130 +1,23 @@
-.product-details {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  font-family: 'Arial', sans-serif;
-}
-
-.breadcrumbs {
-  margin-bottom: 10px;
-  color: #555;
-  font-size: 14px;
-}
-
-.product-content {
-  display: flex;
-  gap: 20px;
-}
-
-.product-right {
-  margin-bottom: 30px;
-}
-
-.product-images {
-  display: flex;
-}
-
-.thumbnails {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.thumbnail {
-  width: 50px;
-  height: 50px;
-}
-
-.main-image {
-  margin-left: 20px;
-}
-
-.main-card-image {
-  width: 250px;
-  height: auto;
-}
-
-.product-info {
-  max-width: 400px;
-}
-
-.product-info h1 {
-  font-size: 32px;
-  color: #a77d24;
-}
-
-.subtitle {
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-.product-options p {
-  margin: 10px 0;
-  font-size: 16px;
-}
-
-.seeds,
-.sizes {
-  display: flex;
-  flex-direction: column;
-}
-
-.quantity-control {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.quantity-control button {
-  width: 30px;
-  height: 30px;
-}
-
-.quantity-control input {
-  width: 40px;
-  text-align: center;
-}
-
-.price {
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-.action-buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.add-to-cart,
-.buy-now {
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-.add-to-cart {
-  background-color: #f1f1f1;
-  color: #000;
-}
-
-.buy-now {
-  background-color: #a77d24;
-  color: #fff;
+.content {
+  font-size: 35px;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
 }
 
 .img {
-  height: 400px;
+  height: 350px;
+  width: 520px;
 }
 
 .productRight {
-  margin-left: 150px;
+  margin-left: 40px;
 }
 
-.quantity_control button {
+.dec,
+.inc {
   width: 40px;
-  height: 40px;
+  height: 45px;
   background-color: #f5f5f5;
   border: 1px solid #ccc;
   font-size: 18px;
@@ -132,10 +25,16 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  margin-top: 20px;
 }
 
-.quantity_control button:hover {
+.dec:hover,
+.inc:hover {
   background-color: #e2e2e2;
+}
+
+.addCart:hover {
+  background-color: #d1a064;
 }
 
 .quantity_control input {
@@ -143,4 +42,72 @@
   text-align: center;
   font-size: 18px;
   border: none;
+}
+
+.discount {
+  display: inline-block;
+  padding: 3px 14px;
+  margin-left: 10px;
+  background: #cfab68;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 13px;
+  color: white;
+  vertical-align: text-bottom;
+}
+
+.price {
+  font-size: 25px;
+  font-weight: 600;
+  color: grey;
+  margin-left: 10px;
+}
+
+.type {
+  border-bottom: 1px solid #ebecf0;
+  padding-bottom: 15px;
+}
+
+.lhat {
+  margin-top: 25px;
+  font-weight: bold;
+}
+
+.addCart {
+  width: 60%;
+  height: 45px;
+  line-height: 45px;
+  padding: 0 15px;
+  outline: none;
+  font-weight: 600;
+  font-size: 15px;
+  background-color: #cfab68;
+  border-color: #cfab68;
+  color: white;
+  border: 3px solid #cfab68;
+  margin-left: 20px;
+  border-radius: 2px;
+}
+
+.info {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.infoD {
+  margin-left: 20px;
+}
+
+.infoHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.toggleButton {
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
 }

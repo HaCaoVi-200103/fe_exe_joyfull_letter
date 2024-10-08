@@ -2,13 +2,25 @@ import { useState } from "react";
 import Layout from "../../components/Layout";
 import style from "./style.module.css";
 import BreadcrumbCustomize from "../../components/Breadcrumb";
-import img_birthdat from "../../assets/img_birthdat.jpg";
-
+import img_dep from "../../assets/img_dep.jpg";
+import img_bd from "../../assets/img_bd.jpg";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ProductDetail = () => {
   const [selectedSeed, setSelectedSeed] = useState<string[]>([]);
-  const [selectedSize, setSelectedSize] = useState<string>("16x16");
   const [quantity, setQuantity] = useState<number>(1);
+  const [mainImage, setMainImage] = useState<string>(img_dep);
+  const [showProductInfo, setShowProductInfo] = useState<boolean>(true);
+
+  const productInfo = {
+    material: "Giấy tái chế từ vở/ sách cũ",
+    design: "Thủ công, thân thiện với môi trường, có hạt giống bên trong",
+    brand: "Joyfull Letter",
+    madeIn: "Việt Nam",
+    highlight: 'Thiết kế độc đáo, có hạt giống, được tạo bởi "Mầm"',
+    size: "16x22",
+  };
 
   const handleSeedSelection = (seed: string) => {
     setSelectedSeed((prev) =>
@@ -18,15 +30,19 @@ const ProductDetail = () => {
     );
   };
 
-  const handleSizeChange = (size: string) => {
-    setSelectedSize(size);
+  const showWarning = () => {
+    toast.warning("Quantity must be greater than 0");
   };
 
   const handleQuantityChange = (operation: string) => {
     if (operation === "increase") {
       setQuantity((prev) => prev + 1);
-    } else if (operation === "decrease" && quantity > 1) {
-      setQuantity((prev) => prev - 1);
+    } else if (operation === "decrease") {
+      if (quantity <= 1) {
+        showWarning();
+      } else {
+        setQuantity((prev) => prev - 1);
+      }
     }
   };
 
@@ -44,19 +60,22 @@ const ProductDetail = () => {
                 <div
                   className={`thumbnails d-flex flex-column ${style.thumbnails}`}
                 >
-                  {[1, 2, 3, 4, 5].map((item, index) => (
-                    <img
-                      key={index}
-                      src={img_birthdat}
-                      alt={`Thumbnail ${item}`}
-                      className="img-thumbnail mb-2"
-                    />
-                  ))}
+                  {[img_bd, img_dep, img_bd, img_dep, img_bd, img_dep].map(
+                    (item, index) => (
+                      <img
+                        key={index}
+                        src={img_bd}
+                        alt={`Thumbnail ${item + 1}`}
+                        className="img-thumbnail mb-2"
+                        onClick={() => setMainImage(item)}
+                      />
+                    )
+                  )}
                 </div>
               </div>
               <div className="col-10">
                 <img
-                  src={img_birthdat}
+                  src={mainImage}
                   alt="Birthday Card"
                   className={style.img}
                 />
@@ -66,16 +85,21 @@ const ProductDetail = () => {
 
           <div className="col-md-6">
             <div className={style.productRight}>
-              <h1 className="display-4">
-                <strong>Birthday card</strong>
-              </h1>
-              <p className="lead text-muted">
+              <h1 className={style.content}>
                 Birthday greeting cards for friends and relatives
-              </p>
-              <div className="product-options mt-4">
-                <p className="fw-bold">Seed selection:</p>
+              </h1>
+
+              <div className="mb-3">
+                <span className={style.discount}>-10%</span>
+                <span className={style.price}>25.000VND</span>
+              </div>
+
+              <div className={`mb3 ${style.type}`}>
+                <div>
+                  <h5 className={style.lhat}>LOẠI HẠT:</h5>
+                </div>
                 <div className="form-check">
-                  {["Petunia", "Yellow Cotton Tree", "Marigold"].map((seed) => (
+                  {["Dạ yến thảo", "Gáo vàng", "Sao nhái"].map((seed) => (
                     <div key={seed} className="form-check">
                       <input
                         className="form-check-input"
@@ -88,50 +112,46 @@ const ProductDetail = () => {
                     </div>
                   ))}
                 </div>
+              </div>
 
-                <p className="fw-bold mt-3">Size:</p>
-                {["16x16", "16x24"].map((size) => (
-                  <div key={size} className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="radio"
-                      name="size"
-                      value={size}
-                      checked={selectedSize === size}
-                      onChange={() => handleSizeChange(size)}
-                    />
-                    <label className="form-check-label">{size}</label>
-                  </div>
-                ))}
-
-                <p className="fw-bold mt-3">Quantity:</p>
-                <div className={style.quantity_control}>
+              <div className={style.quantity_control}>
+                <div>
                   <button
-                    className="dec"
+                    className={style.dec}
                     onClick={() => handleQuantityChange("decrease")}
                   >
                     -
                   </button>
                   <input type="text" value={quantity} readOnly />
                   <button
-                    className="inc"
+                    className={style.inc}
                     onClick={() => handleQuantityChange("increase")}
                   >
                     +
                   </button>
+                  <button className={style.addCart}>ADD TO CART</button>
                 </div>
-
-                <div className="price mb-3">
-                  <span className="fw-bold">Price:</span>{" "}
-                  <span className="fs-4">25.000VND</span>
-                </div>
-
-                <div className="d-flex gap-3">
-                  <button className="btn btn-outline-primary">
-                    Add to cart
+              </div>
+              <div className="mb-3">
+                <div
+                  className={style.infoHeader}
+                  onClick={() => setShowProductInfo(!showProductInfo)}
+                >
+                  <h5 className={style.info}>THÔNG TIN SẢN PHẨM:</h5>
+                  <button className={style.toggleButton}>
+                    {showProductInfo ? "-" : "+"}
                   </button>
-                  <button className="btn btn-warning">Buy now</button>
                 </div>
+                {showProductInfo && (
+                  <div className={style.infoD}>
+                    <p>- Chất liệu: {productInfo.material} </p>
+                    <p>- Thiết kế: {productInfo.design} </p>
+                    <p>- Kích thước: {productInfo.size} </p>
+                    <p>- Thương hiệu: {productInfo.brand} </p>
+                    <p>- Đặc điểm nổi bật: {productInfo.highlight} </p>
+                    <p>- Sản xuất tại: {productInfo.madeIn} </p>
+                  </div>
+                )}
               </div>
             </div>
           </div>
